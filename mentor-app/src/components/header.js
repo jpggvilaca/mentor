@@ -1,0 +1,56 @@
+import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import React from 'react'
+
+import styled from 'styled-components'
+
+const StyledHeader = styled.header`
+  align-items: center;
+  background-color: #3079ED;
+  border-bottom: 2px solid #fff;
+  display: flex;
+  height: 70px;
+`;
+
+const StyledLi = styled.li`
+  color: #fff;
+  margin: 0;
+  margin-right: 10px;
+`;
+
+const TitleWrapper = styled.ul`
+  max-width: 960px;
+  padding-left: 1.0875rem;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+`;
+
+const routes = [
+  { name: 'Home', path: '/' },
+  { name: 'About', path: '/about' },
+  { name: 'Mentors', path: '/mentors' },
+  { name: 'Book', path: '/book' }
+];
+
+const Header = () => (
+  <StyledHeader>
+    <TitleWrapper>
+      {routes.map((route, index) =>
+        <Link to={route.path} key={`route-${index}`}>
+          <StyledLi>{route.name}</StyledLi>
+        </Link>
+      )}
+    </TitleWrapper>
+  </StyledHeader>
+)
+
+Header.propTypes = {
+  siteTitle: PropTypes.string,
+}
+
+Header.defaultProps = {
+  siteTitle: ``,
+}
+
+export default Header
