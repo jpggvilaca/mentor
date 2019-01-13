@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-import styled from 'styled-components'
-import github from './github.png';
+import styled from 'styled-components';
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Image from '../components/Image';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 const Card = styled.div`
   border: 1px solid #fff;
@@ -16,7 +16,7 @@ const Card = styled.div`
   width: 200px;
 `;
 
-const ImageWrapper = styled.img`
+const ImageWrapper = styled.div`
   background-image: url(./avatar.jpg);
   background-size: cover;
   background-position: center;
@@ -35,7 +35,7 @@ const SocialIcons = styled.ul`
   display: flex;
 `;
 
-const Icon = styled.div`
+const Icon = styled(Image)`
   height: 44px;
   width: 44px;
 `;
@@ -51,7 +51,7 @@ const Mentors = () => (
       <Text>Frontend Developer</Text>
       <Text>React, JS, HTML, CSS</Text>
       <SocialIcons>
-        <Icon src={github} />
+        <Icon path={"github.png"} />
       </SocialIcons>
     </Card>
   </Layout>

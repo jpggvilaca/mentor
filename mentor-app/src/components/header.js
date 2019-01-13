@@ -1,8 +1,8 @@
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
-import React from 'react'
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const StyledHeader = styled.header`
   align-items: center;
@@ -30,7 +30,8 @@ const routes = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
   { name: 'Mentors', path: '/mentors' },
-  { name: 'Book', path: '/book' }
+  { name: 'How it Works', path: '/howitworks' },
+  { name: 'Book', path: '/book' },
 ];
 
 const Header = () => (
@@ -43,14 +44,14 @@ const Header = () => (
       )}
     </TitleWrapper>
   </StyledHeader>
-)
+);
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Header
+export default Header;

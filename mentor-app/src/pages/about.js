@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from 'react';
+import { Link } from 'gatsby';
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 const About = () => (
   <Layout>
@@ -26,6 +26,6 @@ const About = () => (
     <a href="mailto:jpggvilaca@gmail.com">Email me</a>
     <p>Or book a <Link to="/book">lesson</Link></p>
   </Layout>
-)
+);
 
-export default About
+export default About;
