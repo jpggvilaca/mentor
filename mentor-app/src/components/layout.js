@@ -9,22 +9,13 @@ import './layout.css'
 
 const StyledLayout = styled.div`
   color: #fff;
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 1rem 1.0875rem 1.45rem;
-`;
-
-const StyledWrapper = styled.div`
-  background-color: #3079ED;
-  height: 100vh;
-`;
-
-const StyledFooter = styled.footer`
-  max-width: 960px;
-  padding-left: 1.0875rem;
-  margin: 0 auto;
-  display: flex;
-  width: 100%;
+  background-image: url(./background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 10px;
+  padding-left: 30px;
+  height: calc(100vh - 70px);
 `;
 
 const Layout = ({ children }) => (
@@ -39,16 +30,12 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <StyledWrapper>
+      <div>
         <Header siteTitle={data.site.siteMetadata.title} />
         <StyledLayout>
           {children}
         </StyledLayout>
-        <StyledFooter>
-          © {new Date().getFullYear()}, Built with
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </StyledFooter>
-      </StyledWrapper>
+      </div>
     )}
   />
 )

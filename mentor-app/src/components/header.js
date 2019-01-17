@@ -6,8 +6,8 @@ import styled from 'styled-components';
 
 const StyledHeader = styled.header`
   align-items: center;
-  background-color: #3079ED;
-  border-bottom: 2px solid #fff;
+  background-color: #6497b1;
+  border-bottom: 2px solid #b3cde0;
   display: flex;
   height: 70px;
 `;

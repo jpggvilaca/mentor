@@ -2,7 +2,6 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import Image from '../components/Image';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
@@ -35,7 +34,7 @@ const SocialIcons = styled.ul`
   display: flex;
 `;
 
-const Icon = styled(Image)`
+const Icon = styled.img`
   height: 44px;
   width: 44px;
 `;
@@ -49,9 +48,10 @@ const Mentors = () => (
       <ImageWrapper />
       <Text>João Vilaça</Text>
       <Text>Frontend Developer</Text>
-      <Text>React, JS, HTML, CSS</Text>
       <SocialIcons>
-        <Icon path={"github.png"} />
+        <a href="https://github.com/jpggvilaca">
+          <Icon src={"./github.png"} />
+        </a>
       </SocialIcons>
     </Card>
   </Layout>
