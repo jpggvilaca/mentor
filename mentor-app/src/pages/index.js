@@ -1,44 +1,58 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Section from '../components/Section';
 
-const StyledBox = styled.div`
-  background-color: rgb(100,151,177,.7);
-  margin-top: 60px;
-  padding: 30px;
-  max-width: 480px;
+import colors from '../colors';
 
-  p + p {
-    margin-top: 5px;
+const fade = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`;
+
+const grow = keyframes`
+  from {
+    transform: scale(.8, .8);
+  }
+
+  to {
+    transform: scale(1, 1);
   }
 `;
 
 const StyledH1 = styled.h1`
+  font-size: 48px;
+  letter-spacing: .02rem;
+  line-height: 48px;
   margin-bottom: 30px;
-`;
-
-const StyledH5 = styled.h5`
-  font-size: 18px;
-  margin-bottom: 45px;
+  max-width: 960px;
+  text-align: center;
+  animation: ${grow} 1.8s linear;
 `;
 
 const StyledButton = styled.button`
   background-color: transparent;
-  border: 1px solid #fff;
+  font-size: 24px;
   padding: 10px;
   margin-top: 30px;
   transition: .3s all ease-in-out;
+  animation: ${fade} 4s linear;
 
   &:hover {
-    background-color: #fff;
+    color: ${colors.blue};
     cursor: pointer;
   }
 
   &:hover a {
-    color: rgb(100,151,177);
+    color: ${colors.blue};
   }
 `;
 
@@ -46,24 +60,27 @@ const StyledLink = styled(Link)`
   transition: .3s all ease-in-out;
 `;
 
+const IndexSection = styled(Section)`
+  align-items: center;
+  color: ${colors.blue};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`, 'mentor']} />
 
-    <StyledBox>
-      <StyledH1>Hello</StyledH1>
+    <IndexSection>
+      <StyledH1>
+        Hi, I'm João. Software engineer from Portugal. This is the Mentor Project.
+      </StyledH1>
 
-      <StyledH5>Having trouble coding? We're here to help</StyledH5>
-
-      <p>Don't know what to learn next?</p>
-      <p>Stuck with bugs?</p>
-      <p>Need code reviews?</p>
-      <p>Need to practice for your next interview?</p>
-
-      <StyledButton>
-        <StyledLink to='/howitworks'>How it works</StyledLink>
-      </StyledButton>
-    </StyledBox>
+      <StyledLink to='/services'>
+        <StyledButton>How it works</StyledButton>
+      </StyledLink>
+    </IndexSection>
 
   </Layout>
 );

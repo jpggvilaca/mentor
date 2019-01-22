@@ -4,45 +4,57 @@ import React from 'react';
 
 import styled from 'styled-components';
 
+import colors from '../colors';
+import routes from '../routes';
+
 const StyledHeader = styled.header`
   align-items: center;
-  background-color: #6497b1;
-  border-bottom: 2px solid #b3cde0;
+  background-color: ${colors.white};
   display: flex;
   height: 70px;
 `;
 
-const StyledLi = styled.li`
-  color: #fff;
+const Li = styled.li`
+  color: ${colors.gray};
+  font-size: 14px;
   margin: 0;
-  margin-right: 10px;
+  margin-right: 30px;
+  transition: .2s all ease-in-out;
+
+  &:hover {
+    color: ${colors.blue};
+  }
 `;
 
-const TitleWrapper = styled.ul`
+const NavBar = styled.ul`
   max-width: 960px;
-  padding-left: 1.0875rem;
-  margin: 0 auto;
   display: flex;
+  justify-content: flex-end;
   width: 100%;
+  position: relative;
 `;
 
-const routes = [
-  { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
-  { name: 'Mentors', path: '/mentors' },
-  { name: 'How it Works', path: '/howitworks' },
-  { name: 'Book', path: '/book' },
-];
+const Name = styled(Link)`
+  color: ${colors.black};
+  font-size: 16px;
+  position: absolute;
+  left: 40px;
+`;
 
 const Header = () => (
   <StyledHeader>
-    <TitleWrapper>
+    <NavBar>
+      <Li>
+        <Name to='/'>MENTOR PROJECT.</Name>
+      </Li>
       {routes.map((route, index) =>
-        <Link to={route.path} key={`route-${index}`}>
-          <StyledLi>{route.name}</StyledLi>
-        </Link>
+        <Li key={`route-${index}`}>
+          <Link to={route.path}>
+            {route.name}
+          </Link>
+        </Li>
       )}
-    </TitleWrapper>
+    </NavBar>
   </StyledHeader>
 );
 
